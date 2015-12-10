@@ -1,0 +1,45 @@
+{
+  "name": "stm-insserv_override",
+  "version": "0.1.0",
+  "author": "stm",
+  "summary": "Manage override files for LSB init.d boot dependencies.",
+  "license": "BSD-2-Clause",
+  "source": "git://github.com/smoeding/puppet-insserv_override.git",
+  "project_page": "https://github.com/smoeding/puppet-insserv_override",
+  "issues_url": "https://github.com/smoeding/puppet-insserv_override/issues",
+  "tags": [ "init.d", "boot" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "14.04", "14.10" ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "5", "6" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "5", "6" ]
+    },
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": "4.x"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.2.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ]
+}
