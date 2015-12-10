@@ -1,7 +1,7 @@
 # This file is managed by Puppet.
-
+#
 ### BEGIN INIT INFO
 <% @overrides.each do |key, val| -%>
-<%= "# %-20s %s" % [ key, val.is_a?(Array) ? val.join(' ') : val ] %>
+<%= "# %-18s %s" % [ key, val.is_a?(Array) ? val.join(' ') : val ] %>
 <% end -%>
 ### END INIT INFO
