@@ -222,4 +222,14 @@ describe 'insserv_override' do
               .with_content(/^# Required-Start: +$/)
     }
   end
+
+  context 'with conflicting runlevels' do
+    let(:params) do
+      { :default_start => [ '1', '5'], :default_stop => [ '1', '2' ] }
+    end
+
+    it {
+      expect { should compile }.to raise_error(/runlevels.*must be distinct/)
+    }
+  end
 end

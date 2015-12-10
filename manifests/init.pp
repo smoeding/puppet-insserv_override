@@ -93,9 +93,11 @@ define insserv_override (
     }
   }
 
-  # if !empty(intersection(any2array($default_start), any2array($default_stop))) {
-  #   fail('The runlevels in default_start and default_stop must be distinct')
-  # }
+  if !empty($default_start) and !empty($default_stop) {
+    if !empty(intersection(any2array($default_start), any2array($default_stop))) {
+      fail('The runlevels in default_start and default_stop must be distinct')
+    }
+  }
 
   $overrides_all = {
     'Provides:'          => $provides,
