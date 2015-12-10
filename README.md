@@ -21,7 +21,7 @@ Manage override files for LSB `init.d` boot dependencies.
 
 ## Module description
 
-The `init.d` boot process uses a dependency based order to start and stop services. Chapter 20 of the Linux Standard Base Core Specification 3.1 defines what needs to be in a compliant Init Script. The Init Script for a service should include the necessary settings (e.g. the runlevels where the service should start) to sucessfully start and stop the service. An override mechanism is available to allow local variations without modifying the provided script. This requires the creation of files in the `/etc/insserv/overrides` directory. This module provides a way to manage these files in your environment.
+The `init.d` boot process uses a dependency based order to start and stop services. Chapter 20 of the Linux Standard Base Core Specification 3.1 defines the format of a compliant Init Script. The Init Script for a service should include the necessary settings (e.g. the runlevels) to sucessfully start and stop the service. An override mechanism is available to allow local variations without modifying the distributed scripts. This requires the creation of files in the `/etc/insserv/overrides` directory. This module provides a way to manage these files in your environment.
 
 ## Setup
 
@@ -31,17 +31,17 @@ This module create, modifies or removes files in the `/etc/insserv/overrides` di
 
 ### Setup requirements
 
-The insserv_override module requires the Puppetlabs modules `stdlib`.
+The `insserv_override` module requires the Puppetlabs modules `stdlib`.
 
 ### Beginning with insserv_override
 
-The `insserv_override` module includes a type of the same name that creates override files in the proper location. It also calls `insserv` to update the system configuration and activate the new settings.
+The `insserv_override` module includes a defined type of the same name that creates override files in the proper location. It also calls the `insserv` executable to activate the new configuration.
 
 You have to declare the type for each configuration you would like to override. See the next section for examples.
 
 ## Usage
 
-### Update the Apache service configuration to only start in runlevel '2'
+### Update the Apache service configuration to only start in runlevel 2
 
 ```puppet
 insserv_override { 'apache2':
@@ -73,7 +73,7 @@ insserv_override { 'mysql':
 
 #### Public Defined Types
 
-* `insserv_override`: The main type to create or remove an override. unset parameters are not included in the override file.
+* `insserv_override`: The main type to create or remove an override. Undefined parameters are not included in the override file.
 
 ##### Parameters (all optional)
 
@@ -83,7 +83,7 @@ insserv_override { 'mysql':
 
 * `required_start`: The names of the facilities that must be available before this facility can be started. Can be a string or an array.
 
-* `required_stop`: The names of the facilities that must be still be available when this facility is stopped. Can be a string or an array.
+* `required_stop`: The names of the facilities that must still be available when this facility is stopped. Can be a string or an array.
 
 * `should_start`: Facilities which should be available during startup of this facility. Can be a string or an array.
 
@@ -93,7 +93,9 @@ insserv_override { 'mysql':
 
 * `x_stop_after`: Facilities that should be stopped before the current facility. Can be a string or an array.
 
-* `default_start`: The run levels in which the current facility should be started. * `default_stop`: The run levels in which the current facility should be stopped.
+* `default_start`: The runlevels in which the current facility should be started.
+
+* `default_stop`: The runlevels in which the current facility should be stopped.
 
 * `x_interactive`: Whether to start this script alone during boot so the user can interact with it at the console. Should be set to 'true' or left undefined.
 

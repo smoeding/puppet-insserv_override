@@ -17,7 +17,7 @@
 #   can be started. Can be a string or an array.
 #
 # [*required_stop*]
-#   The names of the facilities that must be still be available when this
+#   The names of the facilities that must still be available when this
 #   facility is stopped. Can be a string or an array.
 #
 # [*should_start*]
@@ -37,10 +37,10 @@
 #   Can be a string or an array.
 #
 # [*default_start*]
-#   The run levels in which the current facility should be started.
+#   The runlevels in which the current facility should be started.
 #
 # [*default_stop*]
-#   The run levels in which the current facility should be stopped.
+#   The runlevels in which the current facility should be stopped.
 #
 # [*x_interactive*]
 #   Whether to start this script alone during boot so the user can interact
