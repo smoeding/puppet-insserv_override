@@ -201,4 +201,25 @@ describe 'insserv_override' do
     }
   end
 
+  context 'with required_start => ""' do
+    let(:params) do
+      { :required_start => '' }
+    end
+
+    it {
+      should contain_file('/etc/insserv/overrides/foo') \
+              .with_content(/^# Required-Start: +$/)
+    }
+  end
+
+  context 'with required_start => []' do
+    let(:params) do
+      { :required_start => [] }
+    end
+
+    it {
+      should contain_file('/etc/insserv/overrides/foo') \
+              .with_content(/^# Required-Start: +$/)
+    }
+  end
 end
