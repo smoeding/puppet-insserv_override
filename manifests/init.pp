@@ -1,6 +1,6 @@
 # = Define: insserv_override
 #
-# Manage override files for the LSB init.d boot dependencies
+# Manage override files for LSB init.d boot dependencies
 #
 # == Parameters:
 #
@@ -9,15 +9,15 @@
 #   to the File resource. Default: present
 #
 # [*provides*]
-#   The name of the boot facilities provided by this script. Defaults to the
+#   The names of the boot facilities provided by this script. Defaults to the
 #   resource title. Can be an array when more than one facility is provided.
 #
 # [*required_start*]
-#   The name of the facilities that must be available before this facility
+#   The names of the facilities that must be available before this facility
 #   can be started. Can be a string or an array.
 #
 # [*required_stop*]
-#   The name of the facilities that must be still be available when this
+#   The names of the facilities that must be still be available when this
 #   facility is stopped. Can be a string or an array.
 #
 # [*should_start*]
