@@ -110,8 +110,8 @@ define insserv_override (
     'Default-Start:'     => $default_start,
     'Default-Stop:'      => $default_stop,
     'X-Interactive:'     => str2bool($x_interactive) ? {
-      true               => 'true',        # lint:ignore:quoted_booleans
-      default            => undef,
+      true    => 'true',        # lint:ignore:quoted_booleans
+      default => undef,
     },
     'Short-Description:' => $short_description,
   }
