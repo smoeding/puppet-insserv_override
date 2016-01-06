@@ -4,6 +4,7 @@
 
 Some small bugfixes.
 Type of parameter `x_interactive` has been changed to a boolean.
+Changed dependency on `stdlib` 4.3.x or later.
 
 #### Features
 

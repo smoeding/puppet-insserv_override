@@ -32,7 +32,7 @@ This module create, modifies or removes files in the `/etc/insserv/overrides` di
 
 ### Setup requirements
 
-The `insserv_override` module requires the Puppetlabs modules `stdlib`.
+The `insserv_override` module requires the Puppetlabs modules `stdlib` version 4.3.x or later.
 
 ### Beginning with insserv_override
 
