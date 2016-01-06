@@ -81,14 +81,14 @@ define insserv_override (
 
   if !empty($default_start) {
     validate_array($default_start)
-    if !member($runlevels, $default_start) {
+    if !empty(difference($default_start, $runlevels)) {
       fail('Illegal runlevel found in default_start')
     }
   }
 
   if !empty($default_stop) {
     validate_array($default_stop)
-    if !member($runlevels, $default_stop) {
+    if !empty(difference($default_stop, $runlevels)) {
       fail('Illegal runlevel found in default_stop')
     }
   }
