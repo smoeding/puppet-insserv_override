@@ -77,7 +77,7 @@ define insserv_override (
   $short_description = undef,
 ) {
   # Valid runlevels
-  $runlevels = [ '0', '1', '2', '3', '4', '5', '6', 's' ]
+  $runlevels = [ '0', '1', '2', '3', '4', '5', '6', 'S' ]
 
   if !empty($default_start) {
     validate_array($default_start)

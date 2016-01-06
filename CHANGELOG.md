@@ -2,7 +2,8 @@
 
 ### Summary
 
-Mostly small bugfixes. Type of parameter `x_interactive` has been changed to a boolean.
+Some small bugfixes.
+Type of parameter `x_interactive` has been changed to a boolean.
 
 #### Features
 
@@ -11,6 +12,8 @@ Mostly small bugfixes. Type of parameter `x_interactive` has been changed to a b
 #### Bugfixes
 
 - Fix check for valid runlevels to work with older versions of the `stdlib` module. Update dependencies for `stdlib` >= 4.3.0 < 5.0.0.
+
+- Fix single user runlevel character code to `S`.
 
 ## 2015-12-10 - Release 0.1.0
 

@@ -157,6 +157,18 @@ describe 'insserv_override' do
     }
   end
 
+  context 'with default_start => [S]' do
+    let(:params) do
+      { :default_start => [ 'S' ] }
+    end
+
+    it {
+      should contain_file('/etc/insserv/overrides/foo') \
+              .with_content(/^# Default-Start: +S$/)
+    }
+  end
+
+
   context 'with default_start => [1, 3, 5]' do
     let(:params) do
       { :default_start => ['1', '3', '5'] }
