@@ -1,6 +1,7 @@
 # insserv_override
 
 [![Build Status](https://travis-ci.org/smoeding/puppet-insserv_override.svg?branch=master)](https://travis-ci.org/smoeding/puppet-insserv_override)
+[![Puppet Forge](http://img.shields.io/puppetforge/v/stm/insserv_override.svg)](https://forge.puppetlabs.com/stm/insserv_override)
 
 #### Table of Contents
 
