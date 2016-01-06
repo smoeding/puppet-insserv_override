@@ -2,7 +2,11 @@
 
 ### Summary
 
-A small bugfix release.
+Mostly small bugfixes. Type of parameter `x_interactive` has been changed to a boolean.
+
+#### Features
+
+- Parameter `x_interactive` is a boolean parameter now.
 
 #### Bugfixes
 

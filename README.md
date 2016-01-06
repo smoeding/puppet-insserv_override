@@ -98,13 +98,13 @@ insserv_override { 'mysql':
 
 * `default_stop`: The runlevels in which the current facility should be stopped.
 
-* `x_interactive`: Whether to start this script alone during boot so the user can interact with it at the console. Should be set to 'true' or left undefined.
+* `x_interactive`: Whether to start this script alone during boot so the user can interact with it at the console. This is a boolean parameter. Default: false
 
 * `short_description`: A one-line description for the service.
 
 ## Limitations
 
-Most modern distributions are using the `systemd` boot process instead of the older `init.d` based boot process (e.g. Debian-8, Ubuntu-15.04, SLES-12, RedHat-7). This module is only useful on older systems where `systemd` is not yet activated.
+This module is only useful on `init.d` based systems. Most modern distributions (e.g. Debian-8, Ubuntu-15.04, SLES-12, RedHat-7) are using the `systemd` boot process instead of the older `init.d` based boot process.
 
 ## Development
 

@@ -44,7 +44,7 @@
 #
 # [*x_interactive*]
 #   Whether to start this script alone during boot so the user can interact
-#   with it at the console. Should be set to 'true' or left undefined.
+#   with it at the console. This is a boolean parameter. Default: false
 #
 # [*short_description*]
 #   A one-line description for the service.
@@ -73,7 +73,7 @@ define insserv_override (
   $x_stop_after      = undef,
   $default_start     = undef,
   $default_stop      = undef,
-  $x_interactive     = undef,
+  $x_interactive     = false,
   $short_description = undef,
 ) {
   # Valid runlevels
@@ -99,6 +99,8 @@ define insserv_override (
     }
   }
 
+  validate_bool($x_interactive)
+
   $overrides_all = {
     'Provides:'          => $provides,
     'Required-Start:'    => $required_start,
@@ -109,8 +111,8 @@ define insserv_override (
     'X-Stop-After:'      => $x_stop_after,
     'Default-Start:'     => $default_start,
     'Default-Stop:'      => $default_stop,
-    'X-Interactive:'     => str2bool($x_interactive) ? {
-      true    => 'true',        # lint:ignore:quoted_booleans
+    'X-Interactive:'     => $x_interactive ? {
+      true    => bool2str(true),
       default => undef,
     },
     'Short-Description:' => $short_description,

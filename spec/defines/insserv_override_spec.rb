@@ -190,6 +190,27 @@ describe 'insserv_override' do
     }
   end
 
+  context 'with x_interactive => false' do
+    let(:params) do
+      { :x_interactive => false }
+    end
+
+    it {
+      should contain_file('/etc/insserv/overrides/foo') \
+              .without_content(/^# X-Interactive:/)
+    }
+  end
+
+  context 'with x_interactive => foo' do
+    let(:params) do
+      { :x_interactive => 'foo' }
+    end
+
+    it {
+      expect { should compile }.to raise_error(/not a boolean/)
+    }
+  end
+
   context 'with short_description => "foo bar baz"' do
     let(:params) do
       { :short_description => 'foo bar baz' }
