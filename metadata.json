@@ -4,7 +4,7 @@
   "author": "stm",
   "summary": "Manage override files for LSB init.d boot dependencies.",
   "license": "BSD-2-Clause",
-  "source": "git://github.com/smoeding/puppet-insserv_override.git",
+  "source": "https://github.com/smoeding/puppet-insserv_override",
   "project_page": "https://github.com/smoeding/puppet-insserv_override",
   "issues_url": "https://github.com/smoeding/puppet-insserv_override/issues",
   "tags": [ "init.d", "boot" ],
