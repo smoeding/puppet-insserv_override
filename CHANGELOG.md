@@ -1,3 +1,9 @@
+## 2016-04-11 - Release 0.2.1
+
+### Summary
+
+The release contains just a metadata update without functional changes.
+
 ## 2016-01-06 - Release 0.2.0
 
 ### Summary
