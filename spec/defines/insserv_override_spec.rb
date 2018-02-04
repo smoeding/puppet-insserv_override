@@ -79,7 +79,7 @@ describe 'insserv_override' do
 
   context 'with provides => [bar, baz]' do
     let(:params) do
-      { provides: [ 'bar', 'baz' ] }
+      { provides: %w[bar baz] }
     end
 
     it {
@@ -106,7 +106,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Required-Stop: +bar$/)
+        with_content($r{^# Required-Stop: +bar$})
     }
   end
 
@@ -156,7 +156,7 @@ describe 'insserv_override' do
 
   context 'with default_start => [S]' do
     let(:params) do
-      { default_start: [ 'S' ] }
+      { default_start: ['S'] }
     end
 
     it {
@@ -168,7 +168,7 @@ describe 'insserv_override' do
 
   context 'with default_start => [1, 3, 5]' do
     let(:params) do
-      { default_start: ['1', '3', '5'] }
+      { default_start: %w[1 3 5] }
     end
 
     it {
@@ -179,7 +179,7 @@ describe 'insserv_override' do
 
   context 'with default_stop => [2, 4, 6]' do
     let(:params) do
-      { default_stop: ['2', '4', '6'] }
+      { default_stop: %w[2 4 6] }
     end
 
     it {
@@ -216,7 +216,7 @@ describe 'insserv_override' do
     end
 
     it {
-      expect { is_expected.to compile }.to raise_error(/not a boolean/)
+      expect { is_expected.to compile }.to raise_error(%r{not a boolean})
     }
   end
 
@@ -255,11 +255,11 @@ describe 'insserv_override' do
 
   context 'with conflicting runlevels' do
     let(:params) do
-      { default_start: [ '1', '5'], default_stop: [ '1', '2' ] }
+      { default_start: %w[1 5], default_stop: %w[1 2] }
     end
 
     it {
-      expect { is_expected.to compile }.to raise_error(/runlevels.*must be distinct/)
+      expect { is_expected.to compile }.to raise_error(%r{runlevels.*must be distinct})
     }
   end
 end
