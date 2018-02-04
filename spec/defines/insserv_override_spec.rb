@@ -20,7 +20,7 @@ describe 'insserv_override' do
              'refreshonly' => true)
 
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Provides: +foo$/)
+        with_content(%r{^# Provides: +foo$})
     }
   end
 
@@ -62,7 +62,7 @@ describe 'insserv_override' do
              'refreshonly' => true)
 
       is_expected.to contain_file('/etc/insserv/overrides/quux').
-        with_content(/^# Provides: +quux$/)
+        with_content(%r{^# Provides: +quux$})
     }
   end
 
@@ -73,7 +73,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Provides: +bar$/)
+        with_content(%r{^# Provides: +bar$})
     }
   end
 
@@ -84,7 +84,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Provides: +bar baz$/)
+        with_content(%r{^# Provides: +bar baz$})
     }
   end
 
@@ -95,7 +95,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Required-Start: +bar$/)
+        with_content(%r{^# Required-Start: +bar$})
     }
   end
 
@@ -110,25 +110,25 @@ describe 'insserv_override' do
     }
   end
 
-  context 'with is_expected.to_start => bar' do
+  context 'with should_start => bar' do
     let(:params) do
-      { :is_expected.to_start => 'bar' }
+      { should_start: 'bar' }
     end
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Should-Start: +bar$/)
+        with_content(%r{^# Should-Start: +bar$})
     }
   end
 
-  context 'with is_expected.to_stop => bar' do
+  context 'with should_stop => bar' do
     let(:params) do
-      { :is_expected.to_stop => 'bar' }
+      { should_stop: 'bar' }
     end
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Should-Stop: +bar$/)
+        with_content(%r{^# Should-Stop: +bar$})
     }
   end
 
@@ -139,7 +139,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# X-Start-Before: +bar$/)
+        with_content(%r{^# X-Start-Before: +bar$})
     }
   end
 
@@ -150,7 +150,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# X-Stop-After: +bar$/)
+        with_content(%r{^# X-Stop-After: +bar$})
     }
   end
 
@@ -161,7 +161,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Default-Start: +S$/)
+        with_content(%r{^# Default-Start: +S$})
     }
   end
 
@@ -173,7 +173,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Default-Start: +1 3 5$/)
+        with_content(%r{^# Default-Start: +1 3 5$})
     }
   end
 
@@ -184,7 +184,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Default-Stop: +2 4 6$/)
+        with_content(%r{^# Default-Stop: +2 4 6$})
     }
   end
 
@@ -195,7 +195,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# X-Interactive: +true$/)
+        with_content(%r{^# X-Interactive: +true$})
     }
   end
 
@@ -206,7 +206,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        without_content(/^# X-Interactive:/)
+        without_content(%r{^# X-Interactive:})
     }
   end
 
@@ -227,7 +227,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Short-Description: +foo bar baz$/)
+        with_content(%r{^# Short-Description: +foo bar baz$})
     }
   end
 
@@ -238,7 +238,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Required-Start: +$/)
+        with_content(%r{^# Required-Start: +$})
     }
   end
 
@@ -249,7 +249,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content(/^# Required-Start: +$/)
+        with_content(%r{^# Required-Start: +$})
     }
   end
 
