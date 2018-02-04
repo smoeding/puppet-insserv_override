@@ -1,3 +1,9 @@
+## 2018-02-04 - Release 0.2.2
+
+### Summary
+
+Updated version requirements and include RuboCop tests without functional changes.
+
 ## 2016-04-11 - Release 0.2.1
 
 ### Summary

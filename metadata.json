@@ -1,6 +1,6 @@
 {
   "name": "stm-insserv_override",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "stm",
   "summary": "Manage override files for LSB init.d boot dependencies.",
   "license": "BSD-2-Clause",
@@ -35,7 +35,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 3.0.0"
+      "version_requirement": ">= 3.0.0 < 6.0.0"
     }
   ]
 }
