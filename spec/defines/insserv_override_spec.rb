@@ -165,7 +165,6 @@ describe 'insserv_override' do
     }
   end
 
-
   context 'with default_start => [1, 3, 5]' do
     let(:params) do
       { default_start: %w[1 3 5] }
