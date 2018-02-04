@@ -106,7 +106,7 @@ describe 'insserv_override' do
 
     it {
       is_expected.to contain_file('/etc/insserv/overrides/foo').
-        with_content($r{^# Required-Stop: +bar$})
+        with_content(%r{^# Required-Stop: +bar$})
     }
   end
 
